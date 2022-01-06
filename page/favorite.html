@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Video yêu thích</div>
+	<div class="panel-body" ng-if="!moviesFavorite.length">
+		<p>Không có video nào được yêu thích</p>
+	</div>
+
+	<!-- Table -->
+	<table class="table" ng-if="moviesFavorite.length">
+		<thead>
+			<tr>
+				<th>STT</th>
+				<th>Tên video</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="m in moviesFavorite">
+				<td>{{m.id}}</td>
+				<td>{{m.name}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<hr>
+	<div class="clearfix">
+		<a href="" class="btn btn-danger" ng-click="clearMovie()">Xóa các video yêu thích</a>
+	</div>
+</div>

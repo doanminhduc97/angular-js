@@ -1,0 +1,25 @@
+<div class="panel panel-defaut">
+	<div class="panel-heading">
+		<h3 class="panel-title">Danh sách videos</h3>
+	</div>
+	<div class="panel-body">
+		<input type="text" ng-model="search.name" class="form-control" placeholder="Nhập tên..">
+	</div>
+	<div class="col-md-3" ng-repeat="movie in movies|filter:search">
+		<div class="thumbnail">
+			<img ng-src="{{movie.image}}" alt="movies">
+			<div class="caption text-center">
+				<h3>{{movie.name}}</h3>
+				<p>
+					<a href="#" class="btn btn-xs btn-primary">
+						<span class="glyphicon glyphicon-play"></span>
+						<span>Play</span>
+					</a>
+					<a href="#!favorite" class="btn btn-xs btn-danger" ng-click="showMovie(movie)">
+						<span class="glyphicon glyphicon-heart"></span>
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
